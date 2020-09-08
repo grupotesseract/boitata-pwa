@@ -1,6 +1,11 @@
 import React from 'react';
-import '../styles/index.scss';
+import Layout from '../components/Layout';
 
-export default function Home() {
-  return <div>Hello world!</div>
-}
+const Home = () => (
+  <Layout>
+    <h1>Coletivo Boitatá</h1>
+  </Layout>
+);
+
+
+export default Home;
