@@ -9,6 +9,15 @@ module.exports = {
           `Rock Salt`
         ],
       }
+    },
+    {
+      resolve: `gatsby-plugin-react-svg`,
+      options: {
+        rule: {
+          test: /\.svg$/,
+          include: `${__dirname}/src/assets/icons/`,
+        }
+      }
     }
   ],
 }
