@@ -1,0 +1,76 @@
+@import '../index.scss';
+
+.container {
+  display: flex;
+  height: 250px;
+  position: relative;
+  align-items: center;
+  z-index: 5;
+  background-color: $primary;
+  text-align: center;
+}
+
+.container-background {
+  top: 0;
+  bottom: 60%;
+  left: 20%;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-image: url('../../assets/gotinhas.svg');
+  opacity: 30%;
+}
+
+.conteudo {
+  width: 100%;
+}
+
+.conteudo h1 {
+  display: none;
+}
+
+.conteudo img {
+  max-width: 230px;
+}
+
+.conteudo p {
+  margin-bottom: 16px;
+  padding-top: 1.5rem;
+  color: darken($default, 20%);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+@media (min-width: 700px) {
+  .container {
+    height: 180px;
+  }
+
+  .container-background {
+    display: none;
+  }
+
+  .conteudo {
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 960px) {
+  .conteudo h1 {
+    display: inline;
+  }
+}
+
+@media (min-width: 1080px) {
+  .conteudo {
+    padding: 1rem 5rem;
+  }
+
+  .conteudo h1 {
+    font-size: 1.8rem;
+  }
+}
