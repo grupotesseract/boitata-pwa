@@ -21,6 +21,7 @@
   ```shell
   git clone https://github.com/grupotesseract/boitata-pwa.git
   cd boitata-pwa
+  yarn install
   gatsby develop
   ```
 
