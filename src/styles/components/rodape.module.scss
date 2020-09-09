@@ -1,0 +1,42 @@
+@import '../index.scss';
+
+.container {
+  display: flex;
+  height: 160px;
+  background-color: $primary-background-color;
+  align-items: center;
+  text-align: center;
+}
+
+.conteudo {
+  width: 100%;
+}
+
+.conteudo img {
+  max-width: 230px;
+}
+
+.conteudo h1 {
+  display: none;
+}
+
+@media (min-width: 700px) {
+  .conteudo {
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+  }
+
+  .conteudo h1 {
+    display: inline;
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 1080px) {
+  .conteudo {
+    padding: 1rem 5rem;
+  }
+}
