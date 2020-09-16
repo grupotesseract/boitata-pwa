@@ -18,6 +18,7 @@ module.exports = {
           include: `${__dirname}/src/assets/icons/`,
         }
       }
-    }
+    },
+    `gatsby-plugin-antd`,
   ],
 }
