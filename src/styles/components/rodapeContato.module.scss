@@ -51,7 +51,9 @@
   }
 
   .conteudo {
-    padding: 1rem 3rem;
+    max-width: 1200px;
+    padding: 1rem 2rem;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-content: center;
@@ -66,10 +68,6 @@
 }
 
 @media (min-width: 1080px) {
-  .conteudo {
-    padding: 1rem 5rem;
-  }
-
   .conteudo h1 {
     font-size: 1.8rem;
   }
