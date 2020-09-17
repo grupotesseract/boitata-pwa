@@ -1,0 +1,102 @@
+@import '../index.scss';
+
+.container {
+  .titulo {
+    margin-bottom: -10px;
+    color: $default;
+    font-weight: 600;
+    font-size: .8rem;
+  }
+
+  .form {
+    text-align: right;
+
+    .container-input {
+      position: relative;
+      margin-bottom: 0;
+      margin-top: 0;
+
+      input, textarea {
+        min-height: 63px;
+        margin: 16px 0 6px;
+        padding-top: 25px;
+        background-color: transparent;
+      }
+
+      textarea {
+        padding-top: 30px;
+      }
+
+      label {
+        position: absolute;
+        padding: .5rem;
+        color: $primary;
+        font-weight: 700;
+        transform-origin: top left;
+        transform: translate(0, 16px) scale(1);
+      }
+    }
+
+    button {
+      width: 170px;
+      height: 35px;
+      padding: 4px 15px;
+      background-color: $primary;
+      border: none;
+    }
+
+    span {
+      color: white;
+      text-transform: lowercase;
+      font-weight: 700;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .titulo {
+      font-size: 1rem;
+    }
+  }
+}
+
+.container-alternativo {
+  composes: container;
+
+  .titulo {
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: .5rem;
+  }
+
+  .form {
+    .container-input {
+      input, textarea {
+        border-color: white;
+        &::hover {
+          border-color: white;
+        }
+      }
+
+      label {
+        color: darken($default, 20%);
+        font-weight: 600;
+        }
+      }
+
+    button {
+      background-color: $default-dark;
+    }
+
+    span {
+      text-transform: uppercase;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .titulo {
+      text-align: left;
+      margin-bottom: -10px;
+    }
+  }
+}
