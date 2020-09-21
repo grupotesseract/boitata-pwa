@@ -5,7 +5,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Raleway\:400,600,700`,
+          `Raleway\:400,600,700,800`,
           `Rock Salt`
         ],
       }
