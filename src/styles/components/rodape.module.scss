@@ -22,7 +22,9 @@
 
 @media (min-width: 700px) {
   .conteudo {
+    max-width: 1200px;
     padding: 1rem 3rem;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-content: center;
@@ -32,11 +34,5 @@
   .conteudo h1 {
     display: inline;
     font-size: 1.8rem;
-  }
-}
-
-@media (min-width: 1080px) {
-  .conteudo {
-    padding: 1rem 5rem;
   }
 }

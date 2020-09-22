@@ -1,0 +1,228 @@
+@import '../index.scss';
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.foto-membros {
+  img {
+    width: 100%;
+  }
+}
+
+.container-background-top {
+  background-size: 350px 200px;
+  width: 200px;
+  height: 200px;
+  top: 0;
+  right: 0;
+  position: absolute;
+  background-image: url('../../assets/nuvem.png');
+  background-repeat: no-repeat;
+}
+
+.container-background-bottom {
+  background-size: 350px 200px;
+  width: 165px;
+  height: 200px;
+  bottom: 18%;
+  left: 0;
+  position: absolute;
+  background-image: url('../../assets/nuvem.png');
+  transform: scaleX(-1);
+}
+
+.container-form {
+  padding: 0 1.4rem;
+  padding-bottom: 1rem;
+
+  .descricao {
+    padding-bottom: 1rem;
+    color: $default;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+.container-infos {
+  padding-top: 2.5rem;
+  padding-bottom: 1.4rem;
+
+  p {
+    max-width: 300px;
+    margin: 0 auto;
+    color: $default;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+.container-contato {
+  padding: 2rem 0;
+
+  ul {
+    display: inline-block;
+    list-style-type: none;
+  }
+
+  svg {
+    display: inline-flex;
+    width: 22px;
+    margin-right: 6px;
+    fill: $primary;
+    vertical-align: text-bottom;
+  }
+
+  .container-social-medias {
+    color: $default;
+    text-align: center;
+
+    span {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+   .email-boitata {
+     font-size: 1.1rem;
+     svg {
+       display: inline-flex;
+       width: 22px;
+       vertical-align: middle;
+      }
+    }
+  }
+
+  .infos-container {
+    padding: 1rem 0;
+    text-align: center;
+
+    svg {
+      width: 22px;
+      display: inline-flex;
+      vertical-align: middle;
+    }
+
+    .nome, .telefone, .email {
+      text-align: left;
+      color: $default;
+      font-size: 22px;
+    }
+
+    .nome {
+      color: $primary;
+      font-weight: 700;
+    }
+
+    .email {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media (min-width: 768px){
+  .container-form {
+    padding: 0 3rem;
+
+    .descricao {
+      font-size: 1.4rem;
+    }
+  }
+
+  .container-infos {
+    p {
+      max-width: 420px;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .container-background-top {
+    background-size: 400px 280px;
+    width: 300px;
+    height: 280px;
+    top: 5%;
+  }
+
+  .container-background-bottom {
+    bottom: 8%;
+    left: 0;
+  }
+
+  .foto-membros {
+    position: relative;
+    width: 100%;
+    height: 930px;
+    float: right;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: auto;
+      height: 100%;
+      transform: translate(-50%,-50%);
+    }
+  }
+
+  .container-form {
+    padding-top: 7rem;
+
+    .descricao {
+      text-align: right;
+      padding-bottom: 2.5rem;
+    }
+  }
+
+  .container-infos {
+    padding-top: 0;
+
+    p {
+      max-width: 620px;
+      font-size: 1.6rem;
+    }
+  }
+
+  .container-contato {
+    padding: 2.5rem 1rem;
+
+    .container-social-medias {
+      padding-top: .5rem;
+      text-align: left;
+
+      span {
+        font-size: 1.6rem;
+      }
+
+      .email-boitata {
+        font-size: 1.2rem;
+      }
+    }
+
+    .infos-container {
+      padding-bottom:0;
+      padding-top: 0;
+      text-align: right;
+
+      .email {
+        font-size: 1.2rem;
+      }
+    }
+
+    .infos-container.teste {
+      text-align: center;
+    }
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .container-contato {
+    padding: 2.5rem 4rem;
+  }
+}

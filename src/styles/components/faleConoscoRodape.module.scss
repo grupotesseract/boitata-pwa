@@ -1,0 +1,71 @@
+@import '../index.scss';
+
+.container {
+  background-color: $primary;
+  z-index: 5;
+
+  .conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .container-background {
+      width: 320px;
+      height: 200px;
+      top: 25%;
+      left: 0;
+      position: absolute;
+      z-index: -1;
+      background-image: url('../../assets/gotinhas.svg');
+      background-size: 600px 200px;
+      background-repeat: no-repeat;
+      opacity: 30%;
+      transform: scaleX(-1);
+    }
+
+    .container-titulo {
+      padding: 3rem 2rem 0 2rem;
+
+      .descricao {
+        padding-bottom: .5rem;
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+        }
+
+      .email {
+        color: darken($default, 20%);
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+    }
+
+    .container-formulario {
+      margin: 0 auto;
+      padding: 1rem 3em;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    height: 420px;
+
+    .conteudo {
+      .container-background {
+        width: 420px;
+      }
+
+      .container-titulo {
+        padding: 4rem 0;
+        padding-left: 4rem;
+      }
+
+    .container-formulario {
+      max-width: 100%;
+      padding: 5rem 0;
+      padding-top: 3.5rem;
+      padding-right: 3rem;
+    }
+    }
+  }
+}
