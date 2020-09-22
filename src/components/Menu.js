@@ -4,6 +4,13 @@ import { Link } from "gatsby"
 import SocialMedia from "./SocialMedia";
 import menuStyles from '../styles/components/menu.module.scss'
 
+const MenuItemHoverAnimado = ({ children }) => (
+  <div className={menuStyles.menuItemHoverAnimado}>
+    <span>{children}</span>
+    <span className={menuStyles.active}>{children}</span>
+  </div>
+)
+
 const Menu = () => {
   const [menuAberto, setMenuAberto] = useState(false);
   return (
@@ -11,41 +18,57 @@ const Menu = () => {
       {!menuAberto && (
         <div className={menuStyles.mobileMenu}>
           <Link to="/">
-            <img src={logoBoitataEscrito} alt="Boitatá" className={menuStyles.imgLogo}/>
+            <img
+              src={logoBoitataEscrito}
+              alt="Boitatá"
+              className={menuStyles.imgLogo}
+            />
           </Link>
-          <div
+          <button
             onClick={() => setMenuAberto(true)}
             className={menuStyles.mobileOpenButton}
           >
             Menu
-          </div>
+          </button>
         </div>
       )}
       <ul className={menuAberto ? menuStyles.menuAberto : menuStyles.menu}>
         {menuAberto && (
-          <div
+          <button
             onClick={() => setMenuAberto(false)}
             className={menuStyles.closeButton}
           >
             X
-          </div>
+          </button>
         )}
         <li className={menuStyles.itemlogo}>
           <Link to="/">
-            <img src={logoBoitataEscrito} alt="Boitatá" className={menuStyles.imgLogo}/>
+            <img
+              src={logoBoitataEscrito}
+              alt="Boitatá"
+              className={menuStyles.imgLogo}
+            />
           </Link>
         </li>
         <li>
-          <Link to="/quemsomos">Quem Somos</Link>
+          <Link to="/quemsomos">
+            <MenuItemHoverAnimado>Quem Somos</MenuItemHoverAnimado>
+          </Link>
         </li>
         <li>
-          <Link to="/portfolio">Portfólio</Link>
+          <Link to="/portfolio">
+            <MenuItemHoverAnimado>Portfólio</MenuItemHoverAnimado>
+          </Link>
         </li>
         <li>
-          <Link to="/blog">Blog</Link>
+          <Link to="/blog">
+            <MenuItemHoverAnimado>Blog</MenuItemHoverAnimado>
+          </Link>
         </li>
         <li>
-          <Link to="/contato">Contato</Link>
+          <Link to="/contato">
+            <MenuItemHoverAnimado>Contato</MenuItemHoverAnimado>
+          </Link>
         </li>
         <SocialMedia className={menuStyles.socialMedia} />
       </ul>
