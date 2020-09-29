@@ -7,6 +7,8 @@ import FacebookRedondo from '../assets/icons/facebook_redondo.svg';
 import Instagram from '../assets/icons/instagram.svg';
 import Telefone from '../assets/icons/telefone.svg';
 import Youtube from '../assets/icons/youtube.svg';
+import Menu from '../assets/icons/menu.svg';
+import Close from '../assets/icons/close.svg';
 
 const Icone = ({ nome, className }) => {
   const icones = {
@@ -17,6 +19,8 @@ const Icone = ({ nome, className }) => {
     instagram: <Instagram className={className} />,
     telefone: <Telefone className={className} />,
     youtube: <Youtube className={className} />,
+    menu: <Menu className={className} />,
+    close: <Close className={className} />,
   };
 
   return icones[nome];

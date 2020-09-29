@@ -7,7 +7,7 @@ import Menu from './Menu';
 
 const Layout = ({ children, rodape }) => (
   <div className={layoutStyles.container}>
-    <Menu />
+      <Menu />
     <div className={layoutStyles.conteudo}>
       {children}
     </div>

@@ -1,7 +1,11 @@
 @import '../index.scss';
 
 .img-logo {
-  max-width: 150px;
+  max-width: 100px;
+
+  @media (min-width: 1080px) {
+    max-width: 130px;
+  }
 }
 
 .container {
@@ -22,6 +26,9 @@
   z-index: 2;
   background-color: transparent;
   border: 0;
+  svg {
+    width: 1.2em;
+  }
   @media (min-width: 790px) {
     display: none;
   }
@@ -40,23 +47,33 @@
 
 .mobile-open-button {
   align-self: center;
-  padding: 1rem;
-  border-radius: 5px;
-  margin: 5px;
-  border: 1px solid;
+  padding: 0;
+  border: 0px solid;
+  cursor: pointer;
+  background-color: transparent;
+  svg {
+    width: 2em;
+    height: 2em;
+  }
 }
 
 .social-media{
   display: flex;
   align-items: flex-end;
+  padding: 0 1em;
+  a {
+    margin: 0 6px;
+  }
   svg {
     fill: black;
+    font-size: 10px;
     margin-left: 1px;
     margin-right: 1px;
   }
 }
 
 .menu, .menu-aberto {
+  transition: all 0.5s;
   z-index: 10;
   position: fixed;
   top: 0;
@@ -91,9 +108,11 @@
       align-items: flex-start;
       @media (min-width: 790px) {
         flex: 2;
+        padding-left: 2em;
       }
       @media (min-width: 1080px) {
         flex: 4.5;
+        padding-left: 5em;
       }
       a {
         height: 3rem;
@@ -114,6 +133,25 @@
   }
 
 
+}
+
+.menu-translucido .menu {
+  background-color: rgba(255,255,255, 0.6);
+  padding: 10px 20px 0;
+}
+.menu-translucido .mobile-menu {
+  background-color: rgba(255,255,255, 0.6);
+  padding: 10px 20px;
+}
+
+.link-ativo > .menu-item-hover-animado {
+  span {
+    display: none;
+  }
+  .active {
+    display: flex;
+    top: 0;
+  }
 }
 
 .menu-item-hover-animado {
