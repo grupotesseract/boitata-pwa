@@ -8,7 +8,6 @@ import Icone from "./Icone";
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
 const MenuItemHoverAnimado = ({ children, cor = "#72c4e1", getProps }) => {
-  console.log(getProps);
   if (getProps?.isCurrent) {
     return <span style={{ color: cor }}>{children}</span>
   }
