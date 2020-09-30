@@ -1,9 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import Icone from './Icone';
 import styles from '../styles/components/socialMedia.module.scss'
 
-const SocialMedia = () => (
-  <div>
+const SocialMedia = ({ className }) => (
+  <div className={className}>
     <a href='https://www.instagram.com/coletivoboitata/' target='_blank' rel='noreferrer noopener'>
       <Icone nome='instagram' className={styles.icone} />
     </a>
@@ -21,5 +22,13 @@ const SocialMedia = () => (
     </a>
   </div>
 );
+
+SocialMedia.defaultProps = {
+  className: '',
+};
+
+SocialMedia.propTypes = {
+  className: PropTypes.string,
+};
 
 export default SocialMedia;
