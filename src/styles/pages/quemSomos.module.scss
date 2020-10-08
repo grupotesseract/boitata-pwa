@@ -5,32 +5,51 @@
   margin: 0 auto;
   padding-bottom: 2rem;
 
-  .titulo {
-    position: absolute;
-    left: 10%;
-    bottom: -20%;
-
-    h1, h2 {
-      color: $default;
-      font-weight: 700;
-      line-height: 1;
-      text-transform: uppercase;
+  .header {
+    img {
+      width: 100%;
     }
 
-    h1 {
-      margin-bottom: 0;
-      font-size: 1.5rem;
-    }
+    .titulo {
+      position: absolute;
+      left: 10%;
+      bottom: -30%;
 
-    h2 {
-      font-size: 3.5rem;
+      h1, h2 {
+        color: $default;
+        font-weight: 700;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin-bottom: 0;
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 3.5rem;
+      }
     }
   }
 
   .introducao-um {
-    margin-top: 6rem;
-    padding-bottom: 4rem;
+    margin-top: 4rem;
+    padding-bottom: 1rem;
+    z-index: 5;
     text-align: center;
+
+    .container-background-um {
+      width: 200px;
+      height: 90px;
+      bottom: 40%;
+      left: 0;
+      position: absolute;
+      z-index: -1;
+      background-image: url('../../assets/quemSomos/gotinhas.png');
+      background-size: 200px 90px;
+      background-repeat: no-repeat;
+    }
 
     p {
       margin: 0 auto;
@@ -69,6 +88,11 @@
         border-right: 5px solid transparent;
       }
     }
+
+    .nuvens {
+      margin-top: 5rem;
+      width: 200px;
+    }
   }
 
   .introducao-dois {
@@ -88,10 +112,22 @@
 
   .descricao {
     padding-right: 1rem;
+    align-items: center;
+    justify-content: center;
 
     p {
       text-align: right;
       font-size: .9rem;
+    }
+
+    .container-passaros {
+      margin: 0 auto;
+      width: 100px;
+
+      img {
+        margin-bottom: 2rem;
+        width: 100px;
+      }
     }
   }
 
@@ -123,19 +159,20 @@
 
       .linha-tres {
         font-style: italic;
-        transform: rotate(-4deg);
+        transform: rotate(-3deg);
       }
 
       .linha-quatro {
         font-family: $secondary-font;
         font-size: 1.5rem;
-        transform: rotate(-2.5deg);
+        transform: rotate(-2deg);
       }
 
       .linha-cinco {
         color: $primary;
         font-style: italic;
         font-weight: 700;
+        transform: rotate(-1deg);
       }
     }
   }
@@ -172,7 +209,7 @@
       }
     }
 
-    .container-background {
+    .container-background-dois {
       width: 280px;
       height: 150px;
       top: -150%;
@@ -183,6 +220,14 @@
       background-size: 420px 150px;
       background-repeat: no-repeat;
       opacity: 30%;
+    }
+
+    .flores {
+      width: 140px;
+      bottom: -25%;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%, 0%);
     }
   }
 
@@ -270,6 +315,12 @@
   }
 
   @media (min-width: 600px) {
+    .header {
+      .titulo {
+        bottom: -15%;
+      }
+    }
+
     .infos {
       max-width: 600px;
       text-align: center;
@@ -337,22 +388,33 @@
   }
 
   @media (min-width: 992px) {
-    .titulo {
-      left: 60%;
-      bottom: -25%;
-
-      h1 {
-        font-size: 3rem;
+    .header {
+      img {
+        width: 1000px;
+        height: 550px;
       }
 
-      h2 {
-        font-size: 6.5rem;
+      .titulo {
+        left: 55%;
+        h1 {
+          font-size: 3rem;
+        }
+        h2 {
+          font-size: 6.5rem;
+        }
       }
     }
 
     .introducao-um {
-      padding: 2rem 0;
+      padding-top: 2rem;
       margin-bottom: 4rem;
+
+      .container-background-um {
+        width: 500px;
+        height: 200px;
+        bottom: 30%;
+        background-size: 500px 200px;
+      }
 
       p {
         font-size: 1.8rem;
@@ -363,10 +425,14 @@
         height: 38px;
         font-size: 2.5rem;
       }
+
+    .nuvens {
+        width: 350px;
+      }
     }
 
     .introducao-dois {
-      padding: 3rem 0;
+      padding: 0;
 
       .container-retangulo {
         display: block;
@@ -385,10 +451,21 @@
 
     .descricao {
       padding-right: 0;
+      padding-top: 2rem;
       padding-bottom: 2rem;
+      align-items: flex-end;
+      justify-content: flex-start;
 
       p {
+        max-width: 480px;
         font-size: 1.2rem;
+      }
+
+    .container-passaros {
+      width: 300px;
+        img {
+          width: 300px;
+        }
       }
     }
 
@@ -430,10 +507,15 @@
         }
       }
 
-      .container-background {
+      .container-background-dois {
         width: 600px;
         top: -10px;
         background-size: 600px 200px;
+      }
+
+      .flores {
+        width: 290px;
+        top: -20%;
       }
     }
 

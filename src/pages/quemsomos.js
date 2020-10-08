@@ -5,34 +5,42 @@ import Fade from '../components/animacoes/Fade'
 import Behance from '../assets/icons/behance.svg';
 import Facebook from '../assets/icons/facebook.svg';
 import Instagram from '../assets/icons/instagram.svg';
-import fotoCaroline from '../assets/caroline-gomes.png';
-import fotoThomas from '../assets/thomas-musmann.png';
+import fotoCaroline from '../assets/quemSomos/caroline-gomes.png';
+import fotoThomas from '../assets/quemSomos/thomas-musmann.png';
+import imagemHeader from '../assets/quemSomos/imagem_header.jpg';
+import nuvens from '../assets/quemSomos/nuvens.png';
+import passaros from '../assets/quemSomos/passaros.png';
+import flores from '../assets/quemSomos/flores.png';
 import styles from '../styles/pages/quemSomos.module.scss';
 
 const QuemSomos = () => (
   <Layout>
     <div className={styles.container}>
-      <Row className={styles.row}>
-        <Col xs={24} lg={24}>
-          {/* TODO: Substituir a div abaixo pela imagem correta quando disponível */}
-          <div style={{ backgroundColor: 'rgb(236, 236, 236)', height: 450, width: '100%'}} />
-            <div className={styles.titulo}>
-              <Fade>
-                <h1>Quem</h1>
-                <h2>Somos</h2>
-              </Fade>
-            </div>
+      <Row>
+        <Col xs={24} lg={24} className={styles.header}>
+          <img src={imagemHeader} alt='Foto membros' />
+
+          <div className={styles.titulo}>
+            <Fade>
+              <h1>Quem</h1>
+              <h2>Somos</h2>
+            </Fade>
+          </div>
         </Col>
       </Row>
 
       <Row className={styles.introducaoUm}>
         <Col xs={24} lg={24}>
+          <div className={styles.containerBackgroundUm} />
+
           <p>
             Somos uma empresa de criação <br/>
             movida pela vontade de criar
           </p>
 
           <div className={styles.textoComDestaque}> experiências únicas</div>
+
+          <img src={nuvens} alt='Ilustração nuvens' className={styles.nuvens} />
         </Col>
       </Row>
 
@@ -54,11 +62,13 @@ const QuemSomos = () => (
       </Row>
 
       <Row className={styles.descricao}>
-        <Col xs={8} md={10} lg={12}>
-          {/* TODO: adicionar passáros */}
+        <Col xs={8} md={10} lg={10}>
+          <div className={styles.containerPassaros}>
+            <img src={passaros} alt='Ilustração passaros' />
+          </div>
         </Col>
 
-        <Col xs={16} md={{ span: 11, offset: 1}} lg={{ span: 8, offset: 2}}>
+        <Col xs={16} md={{ span: 11, offset: 1}} lg={{ span: 10, offset: 2}}>
           <p>
             Aqui vai um textinho que fala da nossa formação e
             fecha na gente: passaram pelo Boitatá outros(as)
@@ -76,7 +86,7 @@ const QuemSomos = () => (
           {/* TODO: adicionar gif quando estiver pronto */}
         </Col>
 
-        <Col xs={24} lg={12} className={styles.textoInclinado}>
+        <Col xs={24} lg={10} className={styles.textoInclinado}>
             <p className={styles.linhaUm}>Esse é o Boitatá</p>
             <p className={styles.linhaDois}>uma mistura doida <br /> de várias coisas</p>
             <p className={styles.linhaTres}>resultantes da soma de</p>
@@ -108,8 +118,9 @@ const QuemSomos = () => (
         </Col>
 
         <Col xs={24} lg={12} style={{ zIndex: 5}}>
-          <div className={styles.containerBackground} />
-          {/* TODO: Adicionar vaso com plantas */}
+          <div className={styles.containerBackgroundDois} />
+
+          <img src={flores} alt='Ilustração flores' className={styles.flores} />
         </Col>
       </Row>
 
