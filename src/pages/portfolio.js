@@ -4,13 +4,14 @@ import styles from '../styles/pages/portfolio.module.scss';
 import { Button, Row, Col } from 'antd';
 import PortfolioGrid from '../components/PortfolioGrid';
 import Icone from '../components/Icone';
+import Categorias from '../components/Categorias';
 
 const Portfolio = () => {
-  const tagsRef = useRef();
+  const categoriasRef = useRef();
   const [temScroll, setTemScroll] = useState(false);
 
   const scroll = (scrollOffset) => {
-    tagsRef.current.scrollLeft += scrollOffset;
+    categoriasRef.current.scrollLeft += scrollOffset;
   };
 
   const scrollParaEsquerda = () => {
@@ -23,7 +24,7 @@ const Portfolio = () => {
 
   const atualizaTemScroll = () => {
     setTemScroll(
-      tagsRef.current?.scrollWidth !== tagsRef.current?.offsetWidth
+      categoriasRef.current?.scrollWidth !== categoriasRef.current?.offsetWidth
     );
   };
 
@@ -35,14 +36,35 @@ const Portfolio = () => {
   }, [])
 
   //TODO: Substituir pelos dados do Contentful
-  const tags = [
-    'todos',
-    'identidade visual',
-    'editorial',
-    'ilustração',
-    'posters',
-    'motion',
-    'webdesing',
+  const categorias = [
+    {
+      nome: 'todos',
+      href: '/projeto/'
+    },
+    {
+      nome: 'identidade visual',
+      href: ''
+    },
+    {
+      nome: 'editorial',
+      href: ''
+    },
+    {
+      nome: 'ilustração',
+      href: ''
+    },
+    {
+      nome: 'posters',
+      href: ''
+    },
+    {
+      nome: 'motion',
+      href: ''
+    },
+    {
+      nome: 'webdesing',
+      href: ''
+    },
   ]
 
   return (
@@ -71,19 +93,29 @@ const Portfolio = () => {
           </Col>
         </Row>
 
-        <Row align='middle' justify='center'>
+        <Row align='middle' justify='center' className={styles.containerCategorias}>
           <Col lg={24}>
-            {temScroll && <Button onClick={scrollParaEsquerda} icon={<Icone nome='setaEsquerda' />} className={styles.setaEsquerda} />}
+            {
+              temScroll &&
+                <Button
+                  onClick={scrollParaEsquerda}
+                  icon={<Icone nome='setaEsquerda' />}
+                  className={styles.setaEsquerda}
+                />
+            }
 
-            <div ref={tagsRef} className={styles.tags}>
-              {tags.map(tag => (
-                <Button type='link' className={styles.botaoTag}>
-                  {tag}
-                </Button>
-              ))}
-
+            <div ref={categoriasRef} className={styles.categorias}>
+              <Categorias categorias={categorias} />
             </div>
-              {temScroll && <Button onClick={scrollParaDireita} icon={<Icone nome='setaDireita' />} className={styles.setaDireita} />}
+
+            {
+              temScroll &&
+                <Button
+                  onClick={scrollParaDireita}
+                  icon={<Icone nome='setaDireita' />}
+                  className={styles.setaDireita}
+                />
+            }
           </Col>
         </Row>
 
