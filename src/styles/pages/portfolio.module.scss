@@ -6,6 +6,14 @@
   padding-top: 1rem;
   padding-bottom: 2rem;
 
+  [ant-click-animating-without-extra-node]:after {
+    -webkit-animation: none !important;
+    -moz-animation: none !important;
+    -o-animation: none !important;
+    -ms-animation: none !important;
+    animation: none !important;
+  }
+
   .titulo {
     text-align: center;
 
@@ -90,9 +98,41 @@
       white-space: nowrap;
       display: flex;
     }
+
+    .tags {
+      width: calc(100% - 70px);
+      margin: 0 auto;
+      padding-top: 2.5rem;
+      overflow: auto;
+      text-align: center;
+      white-space: nowrap;
+
+      button {
+        margin-bottom: 10px;
+        padding: 4px 10px;
+        display: inline-block;
+        color: $default;
+        font-weight: 800;
+        font-size: .9rem;
+        text-transform: uppercase;
+      }
+
+      button::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background:$default;
+        transition: width .3s;
+      }
+
+      button:hover::after {
+        width: 100%;
+        transition: width .3s;
+      }
+    }
   }
 }
-
 @media (min-width: 992px) {
   .container {
     padding-top: 4rem;
@@ -115,13 +155,6 @@
 
       .ponto {
         margin-top: -15px;
-      }
-    }
-
-    .container-categorias{
-      .categorias {
-        padding-top: 6rem;
-        text-align: center;
       }
     }
   }
