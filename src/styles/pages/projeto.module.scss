@@ -1,0 +1,162 @@
+@import '../index.scss';
+
+.container {
+  max-width: 990px;
+  margin: 0 auto;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  color: $default;
+
+  .botao-fechar {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: .8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  .header {
+    width: 95%;
+  }
+
+  .container-titulo {
+    margin: 0 auto;
+    max-width: 90%;
+    min-height: 50px;
+    display: flex;
+
+    h1 {
+      margin: 0 2rem;
+      display: flex;
+      color: $primary;
+      align-items: center;
+      font-size: 1.3rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    button {
+      width: 50px;
+      height: 50px;
+      align-self: center;
+    }
+
+    .setaEsquerda,
+    .setaDireita {
+      position: absolute;
+      background-color: inherit;
+      border: none;
+      box-shadow: none;
+
+      svg {
+        color: $primary;
+        font-size: 3rem;
+      }
+    }
+
+    .setaEsquerda {
+      left: 0;
+    }
+
+    .setaDireita {
+      right: 0;
+    }
+  }
+
+  .container-descricao {
+    margin: 1rem 0;
+    margin-left: 1.5rem;
+
+    p {
+      margin: 1.5em 10px 0;
+      padding: 0.1em 10px 0;
+      border-left: 7px solid $default;
+      font-size: .7rem;
+      font-weight: 600;
+    }
+
+    .container-botoes-linguagem {
+      margin: 0 12px;
+      padding: 0 12px;
+
+      button {
+        padding: 4px 2px;
+        color: $default;
+        font-size: .8rem;
+      }
+
+      button:active,
+      button:focus,
+      button:hover {
+        font-weight: bold;
+      }
+
+    }
+  }
+
+  .categorias {
+    text-align: right;
+  }
+
+  .container-imagem {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media (min-width: 990px) {
+  .container {
+    .botao-fechar {
+      margin-bottom: 2.5rem;
+      font-size: 1rem;
+    }
+
+    .header {
+      width: 100%;
+    }
+
+    .container-titulo {
+      max-width: 100%;
+      min-height: 110px;
+
+      h1 {
+        width: 60%;
+        font-size: 3rem;
+      }
+
+      button {
+        width: 110px;
+        height: 110px;
+      }
+
+      .setaEsquerda,
+      .setaDireita {
+        svg {
+          font-size: 7rem;
+        }
+      }
+
+      .setaEsquerda {
+        left: -7%;
+      }
+    }
+
+    .container-descricao {
+      p {
+        font-size: .8rem;
+      }
+    }
+
+    .container-imagem {
+      padding-top: 3rem;
+    }
+  }
+}

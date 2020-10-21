@@ -9,7 +9,7 @@ import Telefone from '../assets/icons/telefone.svg';
 import Youtube from '../assets/icons/youtube.svg';
 import Menu from '../assets/icons/menu.svg';
 import Close from '../assets/icons/close.svg';
-import { CaretLeftOutlined, CaretRightOutlined } from '@ant-design/icons';
+import { CaretLeftOutlined, CaretRightOutlined, CaretUpOutlined } from '@ant-design/icons';
 
 const Icone = ({ nome, className }) => {
   const icones = {
@@ -17,8 +17,9 @@ const Icone = ({ nome, className }) => {
     email: <Email className={className} />,
     facebook: <Facebook className={className} />,
     facebookRedondo: <FacebookRedondo className={className} />,
-    setaEsquerda: <CaretLeftOutlined className={className} />,
     setaDireita: <CaretRightOutlined className={className} />,
+    setaEsquerda: <CaretLeftOutlined className={className} />,
+    setaTop: <CaretUpOutlined className={className} />,
     instagram: <Instagram className={className} />,
     telefone: <Telefone className={className} />,
     youtube: <Youtube className={className} />,
