@@ -1,0 +1,161 @@
+@import '../index.scss';
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+
+  [ant-click-animating-without-extra-node]:after {
+    -webkit-animation: none !important;
+    -moz-animation: none !important;
+    -o-animation: none !important;
+    -ms-animation: none !important;
+    animation: none !important;
+  }
+
+  .titulo {
+    text-align: center;
+
+    h1, h2 {
+      line-height: 1;
+      text-transform: uppercase;
+      font-weight: 900;
+      color: $primary;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0;
+      margin-right: 11rem;
+    }
+
+    h2 {
+      font-size: 3rem;
+      margin-left: 2rem;
+    }
+  }
+
+  .descricao {
+    padding: 0 2rem;
+    color: $default;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: right;
+    line-height: 1.2;
+
+    .ponto {
+      margin-top: -5px;
+
+      span {
+        height: 8px;
+        width: 8px;
+        background-color: $default;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 4px;
+        margin-left: 4px;
+        margin-top: -10px;
+      }
+    }
+  }
+
+  .setaEsquerda,
+  .setaDireita {
+    margin-bottom: 0;
+    border: none;
+    height: 48px;
+    width: 40px;
+    bottom: 0;
+    position: absolute;
+    background-color: inherit;
+    box-shadow: none;
+
+    svg {
+      color: $default;
+      font-size: 1.2rem;
+    }
+  }
+
+  .setaEsquerda {
+    left: 0;
+  }
+
+  .setaDireita {
+    right: 0;
+  }
+
+  .tags {
+    width: calc(100% - 70px);
+    margin: 0 auto;
+    padding-top: 2.5rem;
+    overflow: auto;
+    text-align: center;
+    white-space: nowrap;
+
+    button {
+      margin-bottom: 10px;
+      padding: 4px 10px;
+      display: inline-block;
+      color: $default;
+      font-weight: 800;
+      font-size: .9rem;
+      text-transform: uppercase;
+    }
+
+    button::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background:$default;
+      transition: width .3s;
+    }
+
+    button:hover::after {
+      width: 100%;
+      transition: width .3s;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding-top: 4rem;
+
+    .titulo {
+      text-align: initial;
+
+        h1 {
+          font-size: 3rem;
+        }
+
+        h2 {
+          font-size: 4.5rem;
+        }
+      }
+
+    .descricao {
+      padding: 0;
+      font-size: 2rem;
+
+      .ponto {
+        margin-top: -15px;
+      }
+    }
+
+    .setaEsquerda,
+    .setaDireita {
+       height: 38px;
+    }
+
+    .tags {
+      padding-top: 6rem;
+
+      button {
+        padding: 4px 15px;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
