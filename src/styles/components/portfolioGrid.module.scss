@@ -55,7 +55,7 @@
   text-align: left;
   text-transform: uppercase;
 
-  .titulo {
+  .nome {
     margin-bottom: 0;
     line-height: 1.2;
   }
@@ -65,11 +65,11 @@
    .descricao  {
     max-width: 300px;
 
-    .titulo {
+    .nome {
       font-size: 2.1rem;
     }
 
-    .tags {
+    .categorias {
       font-size: .9rem;
     }
   }
@@ -86,11 +86,11 @@
    .descricao  {
     max-width: 150px;
 
-    .titulo {
+    .nome {
       font-size: .9rem;
     }
 
-    .tags {
+    .categorias {
       font-size: .6rem;
     }
   }
@@ -215,11 +215,11 @@
     .descricao  {
       max-width: 500px;
 
-      .titulo {
+      .nome {
         font-size: 2.5rem;
       }
 
-      .tags {
+      .categorias {
         font-size: .9rem;
       }
     }
@@ -240,11 +240,11 @@
     .descricao  {
       max-width: 200px;
 
-      .titulo {
+      .nome {
         font-size: 1.2rem;
       }
 
-      .tags {
+      .categorias {
         font-size: .7rem;
       }
     }

@@ -5,8 +5,10 @@ import { Button, Row, Col } from 'antd';
 import PortfolioGrid from '../components/PortfolioGrid';
 import Icone from '../components/Icone';
 import Categorias from '../components/Categorias';
+import { graphql } from 'gatsby';
+import { uniq } from 'lodash';
 
-const Portfolio = () => {
+const Portfolio = ({ data, location }) => {
   const categoriasRef = useRef();
   const [temScroll, setTemScroll] = useState(false);
 
@@ -35,37 +37,25 @@ const Portfolio = () => {
     return () => window.removeEventListener('resize', atualizaTemScroll);
   }, [])
 
-  //TODO: Substituir pelos dados do Contentful
-  const categorias = [
-    {
-      nome: 'todos',
-      href: '/projeto/'
-    },
-    {
-      nome: 'identidade visual',
-      href: ''
-    },
-    {
-      nome: 'editorial',
-      href: ''
-    },
-    {
-      nome: 'ilustração',
-      href: ''
-    },
-    {
-      nome: 'posters',
-      href: ''
-    },
-    {
-      nome: 'motion',
-      href: ''
-    },
-    {
-      nome: 'webdesing',
-      href: ''
-    },
-  ]
+  let categoriaAtual = 'TODOS';
+  if (location.action === 'PUSH' && location.state.categoriaAtual) {
+    categoriaAtual = location.state.categoriaAtual
+  }
+
+  const projetos = data.allContentfulProjetos.edges.map((data) => data.node);
+  const categorias = uniq(['TODOS'].concat(...projetos.map(projeto => projeto.tags)).map(tag => tag.toUpperCase()))
+
+  const [projetosFiltrados, setProjetosFiltrados] = useState([]);
+
+  useEffect(() => {
+    if (categoriaAtual === 'TODOS') {
+      setProjetosFiltrados(projetos);
+      return;
+    }
+
+    const newProjetosFiltrados = projetos.filter(projeto => projeto.tags.map(tag => tag.toUpperCase()).includes(categoriaAtual));
+    setProjetosFiltrados(newProjetosFiltrados);
+  }, [categoriaAtual]);
 
   return (
     <Layout>
@@ -121,7 +111,7 @@ const Portfolio = () => {
 
         <Row>
           <Col>
-            <PortfolioGrid />
+            <PortfolioGrid projetos={projetosFiltrados} />
           </Col>
         </Row>
        </div>
@@ -130,3 +120,20 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
+
+export const pageQuery = graphql`
+  query allProjects {
+    allContentfulProjetos (
+      sort: { order: ASC, fields: createdAt }
+    ){
+      edges {
+        node {
+          name
+          tags
+          cover
+          slug
+        }
+      }
+    }
+  }
+`

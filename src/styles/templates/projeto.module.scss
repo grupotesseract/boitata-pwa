@@ -7,9 +7,8 @@
   padding-bottom: 2rem;
   color: $default;
 
-  .botao-fechar {
+  .fechar {
     margin-left: 1.5rem;
-    margin-bottom: 1.5rem;
     font-size: .8rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -22,6 +21,7 @@
   }
 
   .header {
+    margin-top: 1.5rem;
     width: 95%;
   }
 
@@ -39,6 +39,7 @@
       font-size: 1.3rem;
       font-weight: 800;
       line-height: 1.2;
+      text-transform: uppercase;
     }
 
     button {
@@ -101,6 +102,8 @@
   }
 
   .categorias {
+    margin-bottom: 1rem;
+    margin-right: 1rem;
     text-align: right;
   }
 
@@ -114,7 +117,7 @@
 
 @media (min-width: 990px) {
   .container {
-    .botao-fechar {
+    .fechar {
       margin-bottom: 2.5rem;
       font-size: 1rem;
     }
