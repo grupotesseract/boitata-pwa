@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from 'antd';
 import styles from '../styles/components/categorias.module.scss';
+import { Link } from 'gatsby';
 
 const Categorias= ({ categorias, comHashtag }) => {
 const prepend = comHashtag ? '#' : '';
@@ -8,13 +8,13 @@ const prepend = comHashtag ? '#' : '';
   return (
     <div className={styles.categorias}>
       {categorias.map(categoria => (
-        <Button
-          type='link'
-          href={categoria.href}
-          key={categoria.nome}
+        <Link
+          key={categoria}
+          to='/portfolio'
+          state={{ categoriaAtual: categoria }}
         >
-          {`${prepend}${categoria.nome}`}
-        </Button>
+          {`${prepend}${categoria}`}
+        </Link>
       ))}
     </div>
   );
